@@ -47,7 +47,7 @@
 .navigation{
     transform: translatex(-50%);
     left: 50%;
-    bottom: 0;
+    bottom: 10px;
     position: absolute;
     background-color: rgb(82, 82, 0);
     display: flex;
@@ -63,7 +63,7 @@
 .navigation-prev{
     transform: translatex(-50%);
     left: 50%;
-    top: 0;
+    top: 10px;
     position: absolute;
     background-color: rgb(82, 82, 0);
     display: flex;

@@ -31,5 +31,22 @@ nextDom.addEventListener('click',
         imagesWrapperDom[activeImage].classList.remove('show')
         activeImage++;
         imagesWrapperDom[activeImage].classList.add('show')
+        if (activeImage > imagesWrapperDom.length - 1) {
+            imagesWrapperDom[activeImage].classList.remove('show')
+            imagesWrapperDom[activeImage] = imagesWrapperDom[1]
+            imagesWrapperDom[activeImage].classList.add('show')
+
+        }
 
     })
+
+    
+prevDom.addEventListener('click', 
+    
+function(){
+
+    imagesWrapperDom[activeImage].classList.remove('show')
+    activeImage--;
+    imagesWrapperDom[activeImage].classList.add('show')
+
+})
