@@ -28,15 +28,17 @@ nextDom.addEventListener('click',
     
     function(){
 
-        imagesWrapperDom[activeImage].classList.remove('show')
-        activeImage++;
-        imagesWrapperDom[activeImage].classList.add('show')
-        if (activeImage > imagesWrapperDom.length - 1) {
-            imagesWrapperDom[activeImage].classList.remove('show')
-            imagesWrapperDom[activeImage] = imagesWrapperDom[1]
-            imagesWrapperDom[activeImage].classList.add('show')
-
+        if (activeImage < imagesWrapperDom.length - 1) {
+            imagesWrapperDom[activeImage].classList.remove('show');
+            activeImage++;
+            imagesWrapperDom[activeImage].classList.add('show');
+        } else if (activeImage == imagesWrapperDom.length - 1) {
+            imagesWrapperDom[activeImage].classList.remove('show');
+            activeImage = 0;
+            imagesWrapperDom[activeImage].classList.add('show');
         }
+
+
 
     })
 
@@ -45,8 +47,15 @@ prevDom.addEventListener('click',
     
 function(){
 
-    imagesWrapperDom[activeImage].classList.remove('show')
-    activeImage--;
-    imagesWrapperDom[activeImage].classList.add('show')
+    if (activeImage > 0) {
+        imagesWrapperDom[activeImage].classList.remove('show');
+        activeImage--;
+        imagesWrapperDom[activeImage].classList.add('show');
+    } else if (activeImage == 0 ) {
+        imagesWrapperDom[activeImage].classList.remove('show');
+        activeImage = (imagesWrapperDom.length - 1);
+        imagesWrapperDom[activeImage].classList.add('show');
+
+    }
 
 })
